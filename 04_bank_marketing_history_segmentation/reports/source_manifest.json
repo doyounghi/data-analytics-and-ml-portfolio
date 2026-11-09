@@ -1,0 +1,93 @@
+{
+  "dataset": "UCI Bank Marketing",
+  "variant": "Original bank-full.csv",
+  "source_page": "https://archive.ics.uci.edu/dataset/222/bank+marketing",
+  "download_url": "https://archive.ics.uci.edu/static/public/222/bank%2Bmarketing.zip",
+  "retrieved_at_utc": "2026-11-07T09:38:56.9438699Z",
+  "doi": "https://doi.org/10.24432/C5K306",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "repository_citation": "Moro, S., Rita, P., and Cortez, P. (2014). Bank Marketing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5K306.",
+  "original_variant_citation": "Moro, S., Laureano, R., and Cortez, P. (2011). Using Data Mining for Bank Direct Marketing: An Application of the CRISP-DM Methodology. ESM 2011, pp. 117-121. EUROSIS.",
+  "files": [
+    {
+      "path": "data/raw/bank_marketing_uci_original.zip",
+      "bytes": 1023843,
+      "sha256": "e0bf5f5de5b846e2f18e9d90606637267d46dfa260e0f17bb12e605db5efbeb4"
+    },
+    {
+      "path": "data/raw/bank.zip",
+      "bytes": 579043,
+      "sha256": "99d7e8eb12401ed278b793984423915411ea8df099e1795f9fefe254f513fe5e"
+    },
+    {
+      "path": "data/raw/bank-full.csv",
+      "bytes": 4610348,
+      "sha256": "d1513ec63b385506f7cfce9f2c5caa9fe99e7ba4e8c3fa264b3aaf0f849ed32d"
+    },
+    {
+      "path": "data/raw/bank-names.txt",
+      "bytes": 3864,
+      "sha256": "3899a77082573ed676a7dfce3765a5307915c7f11b1fe2f6f55fd3c5467c12f7"
+    }
+  ],
+  "extraction": {
+    "outer_archive_members": [
+      "bank.zip",
+      "bank-additional.zip"
+    ],
+    "extracted_from_outer": [
+      "bank.zip"
+    ],
+    "original_archive_members": [
+      "bank-full.csv",
+      "bank-names.txt",
+      "bank.csv"
+    ],
+    "extracted_from_original": [
+      "bank-full.csv",
+      "bank-names.txt"
+    ],
+    "note": "Official archive bytes and selected extracted files are preserved unchanged. The sampled bank.csv and alternate bank-additional variant were not extracted. No source rows were reordered or transformed."
+  },
+  "verification": {
+    "verified_at_utc": "2026-11-07T09:40:15.3031067Z",
+    "method": "PowerShell Import-Csv with semicolon delimiter and exact header, row-count, target, and history checks",
+    "rows": 45211,
+    "columns": 17,
+    "input_variables": 16,
+    "delimiter": ";",
+    "column_names": [
+      "age",
+      "job",
+      "marital",
+      "education",
+      "default",
+      "balance",
+      "housing",
+      "loan",
+      "contact",
+      "day",
+      "month",
+      "duration",
+      "campaign",
+      "pdays",
+      "previous",
+      "poutcome",
+      "y"
+    ],
+    "target": "y",
+    "target_counts": {
+      "no": 39922,
+      "yes": 5289
+    },
+    "segments": {
+      "previous_eq_0": 36954,
+      "previous_gt_0": 8257,
+      "invalid_or_missing_previous": 0,
+      "previous_pdays_no_history_mismatch": 0
+    },
+    "chronology_documentation": "bank-names.txt states that bank-full.csv is ordered by date, May 2008 to November 2010. Original row order is preserved; the CSV has no full timestamp or customer ID for independent date/client validation.",
+    "limits": "Only basic integrity and schema checks were completed. Feature timing, full data quality review, split cutoff, preprocessing, and model evaluation remain pending."
+  }
+}

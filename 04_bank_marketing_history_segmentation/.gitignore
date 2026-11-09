@@ -1,0 +1,21 @@
+# Local datasets and generated artifacts
+/data/raw/*
+!/data/raw/.gitkeep
+/data/processed/*
+!/data/processed/.gitkeep
+/reports/*.csv
+/reports/*.parquet
+/reports/*.pkl
+/reports/*.joblib
+/reports/*.png
+/reports/*.pdf
+
+# Python and notebooks
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.DS_Store
+Thumbs.db
