@@ -1,8 +1,8 @@
-# Healthcare Analytics and Data Science Portfolio
+# Data Analytics and Machine Learning Portfolio
 
-This repository contains healthcare analytics, machine learning, experimentation, and risk stratification portfolio projects focused on Medicaid/Medicare-style member analytics, outreach evaluation, quality improvement, cost modeling, and readmission-risk prioritization.
+This repository contains Python portfolio projects in data analytics, machine learning, and experimentation across healthcare and banking. The work covers member analytics, randomized outreach evaluation, cost modeling, readmission-risk prioritization, and bank-marketing contact-history analysis.
 
-The projects use a mix of **synthetic healthcare-style datasets** and **public de-identified healthcare dataset**. Results are intended for portfolio, learning, and demonstration purposes. They should not be interpreted as real-world clinical, operational, or financial evidence.
+The projects use **synthetic healthcare-style datasets** and **public datasets from healthcare and banking**. Results are intended for portfolio, learning, and demonstration purposes. They should not be interpreted as validated clinical, operational, or financial recommendations.
 
 ## Recommended Review Path
 
@@ -14,8 +14,9 @@ For a fast review, start here:
 | **Best Risk Modeling Setup** | `03_risk_stratification_intervention_prioritization/notebooks/04_baseline_risk_modeling.ipynb` |
 | **Best Statistical Analysis** | `02_diabetes_peer_support_ab_testing/notebooks/02_ab_test_primary_outcome.ipynb` |
 | **Best Business Recommendation** | `02_diabetes_peer_support_ab_testing/notebooks/06_Business_Recommendation_Summary.ipynb` |
+| **Bank Marketing Data Understanding** | [Notebook 00: Data understanding and validation](04_bank_marketing_history_segmentation/notebooks/00_data_understanding_and_validation.ipynb) |
 
-This path highlights the strongest recruiter-facing work: patient-aware readmission modeling, threshold-based outreach prioritization, randomized experiment analysis, and business recommendation development.
+This path highlights patient-aware readmission modeling, threshold-based outreach prioritization, randomized experiment analysis, business recommendations, and reproducible data understanding. The bank-marketing project is in progress; Notebook 00 is complete, and no model has been trained for that project.
 
 ## Projects
 
@@ -114,6 +115,8 @@ Main topics:
 * Risk tier creation
 * Threshold strategy for care management prioritization
 * Calibration and causal interpretation caution
+* Subgroup performance and selection-pattern review
+* Encounter-level versus patient-level outreach planning
 
 Key notebooks:
 
@@ -123,6 +126,36 @@ Key notebooks:
 * `03_risk_stratification_intervention_prioritization/notebooks/03_feature_engineering_and_leakage_review.ipynb`
 * `03_risk_stratification_intervention_prioritization/notebooks/04_baseline_risk_modeling.ipynb`
 * `03_risk_stratification_intervention_prioritization/notebooks/05_model_comparison_and_threshold_strategy.ipynb`
+* `03_risk_stratification_intervention_prioritization/notebooks/06_fairness_and_subgroup_review.ipynb`
+* `03_risk_stratification_intervention_prioritization/notebooks/07_intervention_prioritization_and_business_recommendation.ipynb`
+
+---
+
+### 04 - Bank Marketing: Contact History and Campaign Prioritization
+
+An in-progress banking analytics project using the original UCI Bank Marketing dataset to study term-deposit subscription and prior-campaign contact history.
+
+The intended decision point is before the first call of the current campaign. The planned comparison is between a pooled common-feature model, a pooled model with verified history features, and separate models for clients with and without prior-campaign contact history.
+
+**Current status:** Notebook 00 is complete and executed. It documents 45,211 records, the target distribution, missing-information categories, contact-history segments, prior-outcome consistency, duplicate checks, and feature-timing limitations. No model has been trained.
+
+Main topics:
+
+* Reproducible data understanding and source verification
+* No-prior-contact versus prior-contact segmentation using `previous`
+* Unknown prior outcomes distinguished from failures
+* Pre-first-call feature availability and leakage prevention
+* `pdays` and final/current-campaign contact fields excluded from primary models
+* Shared chronological evaluation design for the planned model comparison
+* Observational and causal interpretation limits
+
+Key files:
+
+* [Project overview](04_bank_marketing_history_segmentation/README.md)
+* [Notebook 00: Data understanding and validation](04_bank_marketing_history_segmentation/notebooks/00_data_understanding_and_validation.ipynb)
+* [Dataset source and validation manifest](04_bank_marketing_history_segmentation/reports/source_manifest.json)
+
+These are contact-history segments, not new versus existing bank customers. The project does not estimate the causal effect of making a call.
 
 ## Skills Demonstrated
 
@@ -134,12 +167,14 @@ Key notebooks:
 
 **Experimentation and statistics:** Intent-to-treat A/B testing, baseline balance checks, standardized mean differences, two-proportion z-test, Welch's t-test, confidence intervals, p-values, logistic regression, odds ratio interpretation
 
-**Business analytics:** Funnel analysis, subgroup analysis, risk tiering, outreach capacity simulation, business recommendation development, data storytelling, Git/GitHub project organization
+**Business analytics:** Funnel analysis, subgroup analysis, risk tiering, outreach capacity simulation, contact-history segmentation, business recommendation development, data storytelling, Git/GitHub project organization
+
+**Data understanding and reproducibility:** Source documentation, data validation, missing-value interpretation, duplicate and unit-of-analysis review, feature-timing decisions, and executed notebooks
 
 ## Repository Structure
 
 ```text
-healthcare-analytics-portfolio/
+data-analytics-and-ml-portfolio/
 |
 |-- 01_medicare_and_medicaid_member_analysis/
 |   |-- notebooks/
@@ -159,11 +194,21 @@ healthcare-analytics-portfolio/
 |   |-- notebooks/
 |   |-- data/
 |   |-- outputs/
+|   |-- src/
 |   |-- requirements.txt
+|   `-- README.md
+|
+|-- 04_bank_marketing_history_segmentation/
+|   |-- notebooks/
+|   |-- data/
+|   |-- reports/
+|   |-- src/
 |   `-- README.md
 |
 `-- README.md
 ```
+
+Start with each project's README for its dataset, setup, and interpretation notes. Raw source files excluded by project ignore rules must be obtained separately from the documented sources.
 
 ## About the Author
 
@@ -177,6 +222,6 @@ LinkedIn: [Doyoung Kim](https://www.linkedin.com/in/doyoung-kim-hello/)
 
 ## Notes on Interpretation
 
-These projects are portfolio demonstrations, not clinical decision tools.
+These projects are portfolio demonstrations, not production decision tools.
 
-Model predictions, experiment results, and business recommendations are intended to demonstrate analytical workflow design, statistical reasoning, machine learning implementation, and healthcare business interpretation. They should not be used for real clinical, financial, or operational decisions without external validation, governance review, and appropriate deployment controls.
+Model predictions, experiment results, and business recommendations demonstrate analytical workflow design, statistical reasoning, and business interpretation. Synthetic experiment results do not establish real-world treatment effects, and observational prediction does not establish that an outreach action causes a better outcome. These projects should not be used for real clinical, financial, or operational decisions without external validation, governance review, and appropriate deployment controls.

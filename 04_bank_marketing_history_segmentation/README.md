@@ -102,5 +102,3 @@ To reproduce it, select the portfolio's existing Python environment (`../.venv/S
 ## Next step
 
 Review Notebook 00 and the remaining feature-timing questions, then agree on a feature dictionary and chronological split before creating preprocessing or modeling notebooks. `data/processed/` and `src/` remain empty apart from Git placeholders.
-
-The portfolio-level README has not been edited.

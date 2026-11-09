@@ -54,8 +54,8 @@ To reproduce the project workflow:
 1. Clone the repository.
 
 ```bash
-git clone https://github.com/doyounghi/Healthcare-data-analysis.git
-cd Healthcare-data-analysis/02_diabetes_peer_support_ab_testing
+git clone https://github.com/doyounghi/data-analytics-and-ml-portfolio.git
+cd data-analytics-and-ml-portfolio/02_diabetes_peer_support_ab_testing
 ```
 
 2. Create and activate a virtual environment.

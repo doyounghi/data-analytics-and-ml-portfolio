@@ -49,8 +49,8 @@ To reproduce the project workflow:
 1. Clone the repository.
 
 ```bash
-git clone https://github.com/doyounghi/Healthcare-data-analysis.git
-cd Healthcare-data-analysis/01_medicare_and_medicaid_member_analysis
+git clone https://github.com/doyounghi/data-analytics-and-ml-portfolio.git
+cd data-analytics-and-ml-portfolio/01_medicare_and_medicaid_member_analysis
 ```
 
 2. Create and activate a virtual environment.
